@@ -5,26 +5,37 @@ export default class WelcomeScreen extends React.Component {
   render(){
   return (
     <ImageBackground source={require("../assets/background.jpg")} style={styles.bg}>
-    <View style={styles.header}>
-      <Text style={styles.textHeader}>Welcome to Animal World</Text>
-    
+        <View style = {{alignItems:'center',marginTop:60}}>
+       
+          <Text style={styles.textHeader}>Welcome to Animal World</Text>
+        
+        <View style={{marginTop:200}}>
+      
+          <TouchableOpacity 
+            style={styles.button} 
+            onPress={()=>{
+              this.props.navigation.navigate("Sound")
+            }}>
+              <Text style={{fontSize: 28,color:"green",fontWeight:"bold"}}>Click and Check it out!!</Text>
+
+
+
+          </TouchableOpacity>
+
+        </View>
+
+          <View style={{marginTop:200}}>
+
+          </View>
       </View>
-    <TouchableOpacity 
-      style={styles.button} 
-      onPress={()=>{
-        this.props.navigation.navigate("Sound")
-      }}>
-        <Text style={styles.textHeader}>Click and Check it out!!</Text>
-    </TouchableOpacity>
-    
     </ImageBackground>
   );
 }
 }
 const styles=StyleSheet.create({
   bg:{
-    
-    alignItems:"center",
+    flex:1,
+    backgroundColor:"red",
     width:"100%",
     height:"100%"
   },
@@ -40,11 +51,11 @@ const styles=StyleSheet.create({
   },
   button:{
     margin:50,
-    backgroundColor: "green",
+    backgroundColor: "white",
     alignItems:"center",
     justifyContent:"center",
-    width:"50%",
-    height:60,
+    width:"90%",
+    height:70,
     borderRadius:15,
     alignSelf:"center"
   }
